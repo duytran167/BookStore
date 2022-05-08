@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -181,13 +182,20 @@
     <Compile Include="Migrations\202205070931531_AddUserTable1.Designer.cs">
       <DependentUpon>202205070931531_AddUserTable1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205071519218_AddBookAndCategoryTable.cs" />
+    <Compile Include="Migrations\202205071519218_AddBookAndCategoryTable.Designer.cs">
+      <DependentUpon>202205071519218_AddBookAndCategoryTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\CategoryBookViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -245,6 +253,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Admin\UserManage.cshtml" />
+    <Content Include="Views\Admin\UpdateUser.cshtml" />
+    <Content Include="Views\Admin\ChangePassword.cshtml" />
+    <Content Include="Views\Admin\CategoryView.cshtml" />
+    <Content Include="Views\Admin\CreateCategory.cshtml" />
+    <Content Include="Views\Admin\EditCategory.cshtml" />
+    <Content Include="Views\Admin\BookManage.cshtml" />
+    <Content Include="Views\Admin\CreateBook.cshtml" />
+    <Content Include="Views\Admin\EditBook.cshtml" />
+    <Content Include="Views\Home\DetailBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205070931531_AddUserTable1.resx">
       <DependentUpon>202205070931531_AddUserTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205071519218_AddBookAndCategoryTable.resx">
+      <DependentUpon>202205071519218_AddBookAndCategoryTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
