@@ -117,6 +117,11 @@ namespace BookStore.Controllers
 		public ActionResult CreateCategory(Category category)
 		{
 			var create_category = new Category() { CategoryName = category.CategoryName };
+			if (_context.Category.Any(t => t.CategoryName == category.CategoryName))
+			{
+				ModelState.AddModelError("Validation", "Existed before");
+				return View(category);
+			}
 			_context.Category.Add(create_category);
 			_context.SaveChanges();
 			return RedirectToAction("CategoryView");
@@ -139,6 +144,7 @@ namespace BookStore.Controllers
 				Id = id,
 				CategoryName = category.CategoryName
 			};
+
 			return View(categories);
 		}
 		[HttpPost]
@@ -228,6 +234,20 @@ namespace BookStore.Controllers
 			var book = new ViewModel.CategoryBookViewModel();
 			book.Id = id;
 			book.Book = _context.Book.Include(t => t.Category).SingleOrDefault(t => t.Id == id);
+			return View(book);
+		}
+		public ActionResult OrderList(string searchString)
+		{
+
+			var book = _context.OrderDetail.Include(t => t.Book.Category).Include(t => t.User).OrderByDescending(t => t.Datetime).ToList();
+			if (!String.IsNullOrWhiteSpace(searchString))
+			{
+				book = _context.OrderDetail
+				.Where(t => t.Book.Title.Contains(searchString))
+				.Include(t => t.Book.Category)
+
+				.ToList();
+			}
 			return View(book);
 		}
 	}

@@ -28,6 +28,7 @@ namespace BookStore.Models
 		public DbSet<User> User { get; set; }
 		public DbSet<Book> Book { get; set; }
 		public DbSet<Category> Category { get; set; }
+		public DbSet<OrderDetail> OrderDetail { get; set; }
 
 		public static ApplicationDbContext Create()
 		{

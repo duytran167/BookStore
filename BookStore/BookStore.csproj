@@ -171,6 +171,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,16 +187,34 @@
     <Compile Include="Migrations\202205071519218_AddBookAndCategoryTable.Designer.cs">
       <DependentUpon>202205071519218_AddBookAndCategoryTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205080835541_AddOrderDetail.cs" />
+    <Compile Include="Migrations\202205080835541_AddOrderDetail.Designer.cs">
+      <DependentUpon>202205080835541_AddOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205080931136_AddOrderDetail2.cs" />
+    <Compile Include="Migrations\202205080931136_AddOrderDetail2.Designer.cs">
+      <DependentUpon>202205080931136_AddOrderDetail2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205081113015_Addtotal.cs" />
+    <Compile Include="Migrations\202205081113015_Addtotal.Designer.cs">
+      <DependentUpon>202205081113015_Addtotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205081129330_ChangetypeOfPrice.cs" />
+    <Compile Include="Migrations\202205081129330_ChangetypeOfPrice.Designer.cs">
+      <DependentUpon>202205081129330_ChangetypeOfPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\CategoryBookViewModel.cs" />
+    <Compile Include="ViewModel\OrderDetailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -263,6 +282,9 @@
     <Content Include="Views\Admin\CreateBook.cshtml" />
     <Content Include="Views\Admin\EditBook.cshtml" />
     <Content Include="Views\Home\DetailBook.cshtml" />
+    <Content Include="Views\User\Checkout.cshtml" />
+    <Content Include="Views\User\OrderList.cshtml" />
+    <Content Include="Views\Admin\OrderList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -289,6 +311,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205071519218_AddBookAndCategoryTable.resx">
       <DependentUpon>202205071519218_AddBookAndCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205080835541_AddOrderDetail.resx">
+      <DependentUpon>202205080835541_AddOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205080931136_AddOrderDetail2.resx">
+      <DependentUpon>202205080931136_AddOrderDetail2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205081113015_Addtotal.resx">
+      <DependentUpon>202205081113015_Addtotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205081129330_ChangetypeOfPrice.resx">
+      <DependentUpon>202205081129330_ChangetypeOfPrice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

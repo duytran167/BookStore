@@ -54,10 +54,10 @@ namespace BookStore
 			}
 
 			// creating Creating Manager role   
-			if (!roleManager.RoleExists("User"))
+			if (!roleManager.RoleExists("Customer"))
 			{
 				var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-				role.Name = "User";
+				role.Name = "Customer";
 				roleManager.Create(role);
 
 			}

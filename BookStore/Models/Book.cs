@@ -10,7 +10,7 @@ namespace BookStore.Models
 		[Required]
 		public string Description { get; set; }
 
-		public string Price { get; set; }
+		public int Price { get; set; }
 		public int CategoryID { get; set; }
 		public Category Category { get; set; }
 		public int Quantity { get; set; }
