@@ -32,18 +32,13 @@
 
 					@Html.TextBoxFor(m => m.Quantity, new { @type = "number", id = "demoInput", @Value = "1" })
 				</td>
-				<td>
-					@Html.DisplayNameFor(model => model.TotalPrice)
-				</td>
+				
 
 			</tr>
 
 		</tbody>
 	</table>
 	<input type="submit" class="btn btn-success" value="Buy Now" />
-	<fieldset class="form-group">
-		<br />
-		<a id="btnIncrease" class="btn btn-success col-md-12"> Update Price </a>
-	</fieldset>
+	
 }
 

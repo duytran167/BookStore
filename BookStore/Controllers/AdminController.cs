@@ -162,7 +162,7 @@ namespace BookStore.Controllers
 			category.CategoryName = viewModel.CategoryName;
 
 			_context.SaveChanges();
-			return RedirectToAction("CategoryView", "Staff");
+			return RedirectToAction("CategoryView", "Admin");
 		}
 		//book manage
 		public ActionResult BookManage(string searchString)

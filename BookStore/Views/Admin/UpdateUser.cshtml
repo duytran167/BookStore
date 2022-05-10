@@ -5,7 +5,7 @@
 
 <h2>Update User</h2>
 
-@Html.ActionLink("Back", "Index", "Admin", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Back", "UserManage", "Admin", null, new { @class = "btn btn-primary" })
 @using (Html.BeginForm("UpdateUser", "Admin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
 	@Html.ValidationSummary("", new { @class = "text-danger" })
