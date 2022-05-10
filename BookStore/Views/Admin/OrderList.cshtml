@@ -45,12 +45,8 @@
 			<td>@item.TotalPrice đ</td>
 			
 			<td>
-				@Html.ActionLink("Edit", "EditBook", "Admin",
-										 new { id = item.Id },
-										 new { @class = "btn btn-warning" })
-				@Html.ActionLink("Delete", "DeleteBook", "Admin",
-										 new { id = item.Id },
-										 new { @class = "btn btn-danger" })
+				
+				
 				@Html.ActionLink("Details", "OrderDetail", "Admin",
 										 new { id = item.Id },
 										 new { @class = "btn btn-primary" })
