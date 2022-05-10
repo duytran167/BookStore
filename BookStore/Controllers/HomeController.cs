@@ -42,6 +42,12 @@ namespace BookStore.Controllers
 
 			return View();
 		}
+		public ActionResult Help()
+		{
+
+
+			return View();
+		}
 
 		public ActionResult Contact()
 		{

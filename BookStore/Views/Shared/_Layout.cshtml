@@ -29,17 +29,15 @@
 										<li>@Html.ActionLink("Home", "Index", "Home")</li>
 										<li>@Html.ActionLink("Book Manage", "BookManage", "Admin")</li>
 										<li>@Html.ActionLink("User Manage", "UserManage", "Admin")</li>
-
+                    <li>@Html.ActionLink("Order List", "OrderList", "Admin")</li>
 
 									}
 
 									if (User.IsInRole("User"))
 									{
 										<li>@Html.ActionLink("Home", "Index", "Home")</li>
-										
 										<li>@Html.ActionLink("My Order Book", "OrderList", "User")</li>
-
-
+										<li>@Html.ActionLink("Help", "Help", "Home")</li>
 									}
 								}
 							</ul>

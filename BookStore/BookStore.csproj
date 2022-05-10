@@ -203,6 +203,14 @@
     <Compile Include="Migrations\202205081129330_ChangetypeOfPrice.Designer.cs">
       <DependentUpon>202205081129330_ChangetypeOfPrice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205091503382_addImageforBook.cs" />
+    <Compile Include="Migrations\202205091503382_addImageforBook.Designer.cs">
+      <DependentUpon>202205091503382_addImageforBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205091526580_Changetypeinttofloat.cs" />
+    <Compile Include="Migrations\202205091526580_Changetypeinttofloat.Designer.cs">
+      <DependentUpon>202205091526580_Changetypeinttofloat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -285,6 +293,10 @@
     <Content Include="Views\User\Checkout.cshtml" />
     <Content Include="Views\User\OrderList.cshtml" />
     <Content Include="Views\Admin\OrderList.cshtml" />
+    <Content Include="Views\User\MyProfile.cshtml" />
+    <Content Include="Views\Home\Help.cshtml" />
+    <Content Include="Views\User\OrderDetail.cshtml" />
+    <Content Include="Views\Admin\OrderDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -323,6 +335,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205081129330_ChangetypeOfPrice.resx">
       <DependentUpon>202205081129330_ChangetypeOfPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091503382_addImageforBook.resx">
+      <DependentUpon>202205091503382_addImageforBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091526580_Changetypeinttofloat.resx">
+      <DependentUpon>202205091526580_Changetypeinttofloat.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -9,8 +9,8 @@ namespace BookStore.ViewModel
 		public string BookId { get; set; }
 		public string UserId { get; set; }
 		public Book Book { get; set; }
-		public int Quantity { get; set; }
-		public int TotalPrice { get; set; }
+		public float Quantity { get; set; }
+		public float TotalPrice { get; set; }
 		public DateTime DateTime { get; set; }
 		public OrderDetailViewModel()
 		{

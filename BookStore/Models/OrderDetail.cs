@@ -9,8 +9,8 @@ namespace BookStore.Models
 		public Book Book { get; set; }
 		public string UserID { get; set; }
 		public User User { get; set; }
-		public int TotalPrice { get; set; }
-		public int Quantity { get; set; }
+		public float TotalPrice { get; set; }
+		public float Quantity { get; set; }
 		public DateTime Datetime { get; set; }
 		public OrderDetail()
 		{

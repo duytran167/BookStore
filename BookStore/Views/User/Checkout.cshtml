@@ -6,6 +6,7 @@
 <h2>Checkout</h2>
 @using (Html.BeginForm("Checkout", "User", "POST"))
 {
+	@Html.AntiForgeryToken()
 	<table class="table">
 		<thead>
 			<tr>
@@ -15,7 +16,7 @@
 				<th scope="col">Description</th>
 				<th scope="col">Price</th>
 				<th scope="col">Quantity</th>
-				
+
 			</tr>
 		</thead>
 		<tbody>
@@ -28,15 +29,21 @@
 				<td>@Model.Book.Description</td>
 				<td>@Model.Book.Price</td>
 				<td>
-					
-					@Html.TextBoxFor(m => m.Quantity, new { @type="number",id = "demoInput", @Value = "1" })
+
+					@Html.TextBoxFor(m => m.Quantity, new { @type = "number", id = "demoInput", @Value = "1" })
+				</td>
+				<td>
+					@Html.DisplayNameFor(model => model.TotalPrice)
 				</td>
 
-				
 			</tr>
 
 		</tbody>
 	</table>
 	<input type="submit" class="btn btn-success" value="Buy Now" />
+	<fieldset class="form-group">
+		<br />
+		<a id="btnIncrease" class="btn btn-success col-md-12"> Update Price </a>
+	</fieldset>
 }
 

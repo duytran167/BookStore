@@ -363,7 +363,7 @@
 
 					<div class="col-md-5 col-sm-12 col-xs-12">
 						<div class="product-image">
-							<img src="https://cdna.artstation.com/p/assets/images/images/016/040/612/large/ahmx-adam-nuh-page-4.jpg?1550671904" alt="194x228" class="img-responsive">
+							<img src="@item.ImageUrl" alt="194x228" class="img-responsive">
 							<span class="tag2 hot">
 								HOT
 							</span>
@@ -380,9 +380,9 @@
 							<span class="tag1"></span>
 						</div>
 						<div class="description">
-							<h4 style="color:tomato">@item.Price đ</h4>
+							<h4 style="color:tomato">@item.Price $</h4>
 						</div>
-						<a style="margin-left:10px" href="@Url.Action( "DetailBook", "Home", new { id = item.Id })">Detail</a>
+						<a style="margin-left:18px; color: dodgerblue" href="@Url.Action( "DetailBook", "Home", new { id = item.Id })">Detail</a>
 					</div>
 
 				</div>

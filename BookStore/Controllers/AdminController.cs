@@ -23,15 +23,22 @@ namespace BookStore.Controllers
 		// GET: Admin
 		public ActionResult Index()
 		{
-			var displayuser = _usermanager.Users.Where(t => t.Roles.Any(m => m.RoleId == "2" || m.RoleId == "3") == true).ToList();
-			return View(displayuser);
+
+			return View();
 		}
 		// list user 
-		public ActionResult UserManage()
+		public ActionResult UserManage(string searchString)
 		{
 			var user = _context.User.ToList();
+			if (!String.IsNullOrWhiteSpace(searchString))
+			{
+				user = _context.User
+			 .Where(t => t.Email.Contains(searchString))
+			 .ToList();
+			}
 			return View(user);
 		}
+
 		//delete User
 		public ActionResult DeleteUser(string id)
 		{
@@ -64,6 +71,7 @@ namespace BookStore.Controllers
 			userID.UserName = detailUser.UserName;
 			userID.FullName = detailUser.FullName;
 			userID.Address = detailUser.Address;
+			userID.PhoneNumber = detailUser.PhoneNumber;
 			_context.SaveChanges();
 			return RedirectToAction("UserManage", "Admin");
 		}
@@ -186,9 +194,12 @@ namespace BookStore.Controllers
 			{
 				Title = categoryBookModel.Book.Title,
 				Description = categoryBookModel.Book.Description,
-				Price = categoryBookModel.Book.Price,
+				Author = categoryBookModel.Book.Author,
+				Pages = categoryBookModel.Book.Pages,
+				ImageUrl = categoryBookModel.Book.ImageUrl,
 				Quantity = categoryBookModel.Book.Quantity,
-				CategoryID = categoryBookModel.Id
+				CategoryID = categoryBookModel.Id,
+				Price = categoryBookModel.Book.Price
 			};
 			_context.Book.Add(new_book);
 			_context.SaveChanges();
@@ -223,7 +234,10 @@ namespace BookStore.Controllers
 			book.Title = viewModel.Book.Title;
 			book.CategoryID = viewModel.Book.CategoryID;
 			book.Description = viewModel.Book.Description;
+			book.Pages = viewModel.Book.Pages;
 			book.Price = viewModel.Book.Price;
+			book.Author = viewModel.Book.Author;
+			book.ImageUrl = viewModel.Book.ImageUrl;
 			book.Quantity = viewModel.Book.Quantity;
 			_context.SaveChanges();
 			return RedirectToAction("BookManage", "Admin");
@@ -250,5 +264,11 @@ namespace BookStore.Controllers
 			}
 			return View(book);
 		}
+		public ActionResult OrderDetail(int id)
+		{
+			var orderDetail = _context.OrderDetail.Include(t => t.User).Include(t => t.Book).SingleOrDefault(t => t.Id == id);
+			return View(orderDetail);
+		}
+
 	}
 }

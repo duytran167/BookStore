@@ -5,6 +5,16 @@
 
 <h2>Staff View</h2>
 
+@using (Html.BeginForm("UserManage", "Admin", "POST"))
+{
+	<div class="input-group col-md-4">
+		@Html.TextBox("searchString", null, new { @type = "text", @class = "form-control ", @placeholder = "Search user..." })
+		<button type="submit" class="btn btn-light">
+			<span class="glyphicon glyphicon-search"></span>
+		</button>
+	</div>
+}
+<br />
 @Html.ActionLink("Create a new account", "Register", "Account", null, new { @class = "btn btn-primary" })
 <table class="table">
 	<thead>
